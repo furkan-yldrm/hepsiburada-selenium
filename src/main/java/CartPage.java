@@ -6,6 +6,6 @@ public class CartPage extends BasePage{
     }
 
     public boolean checkCart() {
-        return false;
+        
     }
 }

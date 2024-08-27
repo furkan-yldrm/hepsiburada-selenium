@@ -10,7 +10,7 @@ public class Test_Add_To_Cart {
 
     @Test
     public void Search_Product(){
-        homePage.SearchBar().search("Notebook");
+        homePage.SearchBar().search("iphone");
         Assertions.assertTrue(productsPage.isOnProductsPage(), "Not on products page!");
     }
 
@@ -24,6 +24,7 @@ public class Test_Add_To_Cart {
     public void Add_To_Cart(){
         productDetailPage.AddToCart();
         Assertions.assertTrue(homePage.cartCount(), "Count did not increase!");
+        productDetailPage.closePopUp();
     }
 
     @Test
