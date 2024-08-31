@@ -3,12 +3,15 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.Stack;
 
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
+
+    SearchBar searchBar;
 
     By cartcountLocator = By.id("CartItemCount");
     By cartLocator = By.id("shoppingCart");
+    By cookieLocator = By.id("onetrust-accept-btn-handler");
 
-    SearchBar searchBar;
+
     public HomePage(WebDriver driver) {
         super(driver);
         searchBar = new SearchBar(driver);
@@ -18,7 +21,7 @@ public class HomePage extends BasePage{
         return this.searchBar;
     }
 
-    private int getCount(){
+    private int getCount() {
         String count = find(cartcountLocator).getText();
         return Integer.parseInt(count);
     }
@@ -30,5 +33,11 @@ public class HomePage extends BasePage{
 
     public void GoToCart() {
         click(cartLocator);
+    }
+
+    public void acceptCookies() {
+        if (isDisplayed(cookieLocator)) {
+            click(cookieLocator);
+        }
     }
 }

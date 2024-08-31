@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 
 public class SearchBar extends BasePage{
 
-    By searchBarLocator = By.xpath("//input[@placeholder='Ürün, kategori veya marka ara']");
+    By searchBarLocator = By.xpath("//input[@class='theme-IYtZzqYPto8PhOx3ku3c theme-JOTHTAYrQhCBEf9bVgI8']");
 
     By searchbuttonLocator = By.xpath("//div[@class='searchBoxOld-yDJzsIfi_S5gVgoapx6f']");
 
